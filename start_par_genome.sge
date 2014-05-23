@@ -1,0 +1,6 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -N parGenome
+#$ -cwd
+#$ -pe smp 1
+plink --noweb --bfile ../target_wunderbar_poster_ex_LDpruned --read-freq ../plink.frq --genome --genome-lists ../tmp.list`printf "%03i\n" $1` ../tmp.list`printf "%03i\n" $2` --out ../data.sub.$1.$2
